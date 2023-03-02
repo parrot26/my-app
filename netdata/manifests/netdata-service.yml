@@ -1,0 +1,14 @@
+# netdata-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: netdata
+  labels:
+    app: netdata
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 19999
+    targetPort: 19999
+  selector:
+    app: netdata
